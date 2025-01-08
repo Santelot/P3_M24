@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P3-M24</title>
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+        }
+        .activity {
+            margin-bottom: 20px;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+     <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+            const step4Activity3 = document.querySelector('#activity-3 .step-4');
+
+            if (selectedTime === '45') {
+                if (activity2) activity2.style.display = 'none';
+                 if (step4Activity3) step4Activity3.style.display = 'table-row';
+            } else if (selectedTime === '40') {
+                if (activity2) activity2.style.display = 'none';
+                if (step4Activity3) step4Activity3.style.display = 'none';
+            } else {
+                 if (activity2) activity2.style.display = 'block';
+                 if (step4Activity3) step4Activity3.style.display = 'table-row';
+            }
+
+            document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P3-M24</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <!-- Aquí se insertarán las actividades -->
+         <!-- Actividad 0 -->
+        <div id="activity-0" class="activity" data-time="N/A">
+            <div class="banner" onclick="toggleContent('activity_0_content')">
+                <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+                  <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                   <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Verificación inicial del equipo y materiales necesarios para completar la misión.
+                </div>
+            </div>
+            <div id="activity_0_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                           Verificar que todos los dispositivos (tabletas o computadoras) estén encendidos, conectados a internet y que el editor de MakeCode esté abierto en modo "Crear". Confirmar que los Microbits estén disponibles y que el espacio esté organizado para trabajar cómodamente. Verificar que las baterías estén cargadas.
+                        </td>
+                        <td style="padding: 10px; vertical-align: top;">No se utiliza diálogo con los estudiantes en esta etapa.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Actividad 1 -->
+        <div id="activity-1" class="activity" data-time="2">
+            <div class="banner" onclick="toggleContent('activity_1_content')">
+                <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Bienvenida al grupo, agradecimiento y presentación de los objetivos del día.
+                </div>
+            </div>
+            <div id="activity_1_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                         <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                         <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                     </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar (Diapositiva 1): "¡Bienvenidos, Genios del Tiempo!" y saludar a los estudiantes con entusiasmo, mencionando el tema del día.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Hola, Genios del Tiempo! 🌟 ¡Qué emoción verlos listos para dominar el tiempo con Micro:bit! Hoy vamos a crear cronómetros increíbles y a explorar el fascinante mundo de la programación. ¡Prepárense para programar, crear y divertirse con la tecnología!</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> Proyectar (Diapositiva 2): "¡Mi Ritmo de Energía!" y pedir a los estudiantes que indiquen su estado de ánimo usando poses temáticas relacionadas con el tiempo.</td>
+                         <td style="padding: 10px; vertical-align: top;">Antes de comenzar, ¡necesito saber cómo se sienten mis genios del tiempo! ⏰ Si están listos para programar cronómetros con Micro:bit, ¡levanten los brazos como si fueran las manecillas de un reloj avanzando! ⏱️ Si necesitan un poquito más de energía, ¡crucen los brazos como si estuvieran midiendo el tiempo con un cronómetro! ⏳ ¡A ver esas poses llenas de ritmo y energía!</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (0.5 minutos):</strong> Proyectar (Diapositiva 3): "¡Ritual de Gratitud Temporal!" y guiar a los estudiantes en el ritual.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Excelente, Genios! Ahora, ¡es momento de nuestro ritual Gnius! Juntemos nuestras manos y digamos juntos: '¡Gracias por estar aquí, Genios! Hoy vamos a dominar el tiempo con la programación de Micro:bit. ¡A dar lo mejor de nosotros y a divertirnos creando!'</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (0.5 minutos):</strong> Proyectar (Diapositiva 4): "¡Objetivos Temporales de Hoy!" y explicar los objetivos de la misión de manera clara y sencilla.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Y ahora, los objetivos de nuestra misión de hoy! 1. Vamos a practicar cómo crear cronómetros básicos que midan el tiempo con precisión utilizando los botones de nuestro Micro:bit. 2. ¡Vamos a crear cronómetros más avanzados que registren tiempos parciales y hasta cronómetros multimodo que revolucionen la forma en que medimos el tiempo! ¿Listos para este reto temporal?</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 2 -->
+        <div id="activity-2" class="activity" data-time="4.0">
+             <div class="banner" onclick="toggleContent('activity_2_content')">
+                <div class="title">🧠 Actividad 2: Brain Vitamin ⏰ Tiempo: 4.0 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                   Actividad física para conectar el cuerpo con la medición del tiempo.
+                </div>
+            </div>
+            <div id="activity_2_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (1 minuto):</strong> Proyectar (Diapositiva 5): "¡Activando Nuestro Ritmo Cerebral!" y explicar que combinarán movimientos y representaciones de la medición del tiempo para activar el cerebro.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Hola, Genios del Tiempo! 🚀 Vamos a activar nuestros cerebros para programar cronómetros con Micro:bit. Hoy combinaremos movimiento y representaciones de la medición del tiempo para preparar nuestras mentes para crear programas increíbles. ¿Listos para activar su ritmo cerebral?</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1.5 minutos):</strong> Proyectar (Diapositiva 6): "¡Mi Secuencia Temporal con Lógica!" y dar las instrucciones para la creación de la secuencia con movimientos.</td>
+                         <td style="padding: 10px; vertical-align: top;">¡Ahora vamos a crear nuestra propia secuencia de movimientos que representen la medición del tiempo! Piensen en cómo funciona un cronómetro. Por ejemplo, pueden simular: cómo inician un cronómetro, cómo cuentan los segundos, cómo detienen el cronómetro o cómo registran un tiempo parcial. Piensen en al menos tres movimientos que representen la acción y las decisiones lógicas que toman al usar un cronómetro, luego muéstrenmelos. ¡A crear con la lógica y el tiempo!</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1.5 minutos):</strong> Proyectar (Diapositiva 7): "¡El Tiempo en Acción!" y pedir a los estudiantes que realicen su secuencia de movimientos y describan la acción de medición del tiempo y las decisiones lógicas que están representando.</td>
+                         <td style="padding: 10px; vertical-align: top;">¡Impresionante, Genios! Ahora, uno por uno, muéstrenme su secuencia de movimientos mientras describen brevemente la acción de medición del tiempo y las decisiones lógicas que representa. ¡Compartan sus simulaciones temporales y prepárense para practicar sus proyectos con lógica y tiempo en MakeCode!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+         <!-- Actividad 3 -->
+        <div id="activity-3" class="activity" data-time="30">
+            <div class="banner" onclick="toggleContent('activity_3_content')">
+                <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 30 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Crear cronómetros con diferentes niveles de complejidad usando MakeCode.
+                </div>
+            </div>
+            <div id="activity_3_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (1,00 minuto):</strong> Proyectar (Diapositiva 8): "¡El Gran Desafío Temporal!" y presentar el desafío con la temática unificada, los nombres de los retos y los tres niveles (Rookie, Master, Hacker).</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Genios del Tiempo, ha llegado el momento de programar con Micro:bit y dominar el tiempo! 🚀 Hoy vamos a hacer magia con la electrónica, la lógica y la programación de cronómetros. Tenemos tres desafíos emocionantes: '¡Cronómetro Básico: Midiendo el Tiempo!' (Rookie), '¡Cronómetro con Vueltas: Registrando Momentos!' (Master) y '¡Cronómetro Multimodo: Innovando en el Tiempo!' (Hacker). ¡A elegir su reto temporal y a programar!</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                       <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (2 minutos):</strong> Proyectar (Diapositiva 9): "¡Detalles de los Retos Temporales!" Describir los pasos y metas específicas de cada nivel, utilizando el texto original y resaltando en negrita las partes clave: Objetivo, Instrucciones, Condiciones y Consejo.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Aquí están los detalles de cada desafío para que elijan su camino!
+                            <br><br>
+                           <strong>Nivel Rookie (Básico): 'Cronómetro Básico: Midiendo el Tiempo'</strong>
+                            <br>
+                            <strong>Nombre del Reto:</strong> '¡Inicia, Detén y Observa!'
+                            <br>
+                            <span style="color: red; font-weight: bold;">Objetivo:</span> Programar el Micro:bit para medir el tiempo transcurrido entre dos eventos utilizando los botones como controles de inicio y parada.
+                            <br>
+                            <span style="color: red; font-weight: bold;">Instrucciones:</span> Configura el botón A para iniciar el conteo del cronómetro. Configura el botón B para detener el conteo. Muestra los segundos transcurridos en la pantalla LED al detener el cronómetro.
+                             <br>
+                            <span style="color: red; font-weight: bold;">Condiciones:</span> El tiempo debe comenzar exactamente cuando se presione el botón A. El cronómetro debe detenerse al presionar el botón B y mantener el tiempo visible.
+                             <br>
+                            <span style="color: red; font-weight: bold;">Consejo:</span> Usa un bucle que incremente una variable cada segundo y prueba la función basic.showNumber() para mostrar los resultados.
+                            <br><br>
+                             <strong>Nivel Master (Intermedio): 'Cronómetro con Vueltas: Registrando Momentos'</strong>
+                             <br>
+                            <strong>Nombre del Reto:</strong> '¡Marca los Tiempos Parciales!'
+                             <br>
+                             <span style="color: red; font-weight: bold;">Objetivo:</span> Ampliar el cronómetro básico para registrar tiempos parciales (laps) y mostrarlos en secuencia al usuario.
+                            <br>
+                             <span style="color: red; font-weight: bold;">Instrucciones:</span> Usa el botón A para iniciar y detener el cronómetro. Usa el botón B para registrar un tiempo parcial sin detener el cronómetro. Muestra los tiempos parciales guardados al final del recorrido, uno por uno, en la pantalla LED.
+                            <br>
+                             <span style="color: red; font-weight: bold;">Condiciones:</span> El cronómetro debe registrar hasta 3 tiempos parciales. Los tiempos parciales deben mostrarse en el orden en que se registraron.
+                            <br>
+                            <span style="color: red; font-weight: bold;">Consejo:</span> Usa una lista para guardar los tiempos parciales y un bucle para recorrerlos al final del programa.
+                            <br><br>
+                           <strong>Nivel Hacker (Avanzado): 'Cronómetro Multimodo: Innovando en el Tiempo'</strong>
+                             <br>
+                             <strong>Nombre del Reto:</strong> '¡Modo Cronómetro y Temporizador en Uno!'
+                             <br>
+                            <span style="color: red; font-weight: bold;">Objetivo:</span> Diseñar un sistema con dos modos: cronómetro y temporizador, seleccionables desde un menú inicial.
+                            <br>
+                             <span style="color: red; font-weight: bold;">Instrucciones:</span> Implementa un menú inicial que permita al usuario elegir entre: Modo Cronómetro: Similar al nivel Master, con tiempos parciales. Modo Temporizador: El usuario debe ingresar un tiempo límite; el sistema cuenta hacia atrás y emite una señal al llegar a cero. Usa los botones A y B para navegar por el menú y confirmar la selección. En el Modo Temporizador, muestra el tiempo restante en la pantalla LED mientras el contador está activo.
+                            <br>
+                             <span style="color: red; font-weight: bold;">Condiciones:</span> El usuario debe poder cambiar de modo sin reiniciar el dispositivo. El sistema debe emitir una señal clara (como un patrón LED) al finalizar el temporizador.
+                             <br>
+                             <span style="color: red; font-weight: bold;">Consejo:</span> Divide el programa en funciones separadas para cada modo y prueba cada una individualmente antes de integrarlas.</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (20 minutos):</strong> Proyectar (Diapositiva 10): "¡A Programar el Tiempo, Genios!" Temporizador de 20 minutos con recordatorio de los niveles y la temática.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Es su turno, genios del tiempo! 🚀 Tienen 20 minutos para practicar cómo programar cronómetros con Micro:bit. Recuerden los nombres de sus retos y dejen que su creatividad guíe sus proyectos. ¡La magia del tiempo está en sus manos!</td>
+                    </tr>
+                     <tr class="step-4" >
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (5 minutos):</strong> Proyectar (Diapositiva 11): "¡Cargando la Magia Temporal!" Explicación de cómo conectar y transferir el código a Micro:bit, con instrucciones separadas para computadora y iPad.</td>
+                         <td style="padding: 10px; vertical-align: top;">¡Genios del tiempo, llegó el momento de cargar su magia a Micro:bit! 💻 Si están en una computadora: Conecten su Micro:bit con el cable USB. Descarguen el archivo .hex generado por MakeCode. Arrastren el archivo .hex a su Micro:bit. 📱 Si están en un iPad: Conecten su Micro:bit por Bluetooth. Sigan las instrucciones de MakeCode para transferir el programa. ¡A cargar su magia y a ver sus cronómetros en acción!</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (3 minutos):</strong> Proyectar (Diapositiva 12): "¡Micro:bit y el Tiempo en Acción!" Temporizador de 3 minutos para transferir los programas.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Tienen 3 minutos para cargar sus programas a Micro:bit y ver cómo miden el tiempo! ⏱️ ¡A programar y a encender sus creaciones temporales!</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 6 (1 minuto):</strong> Proyectar (Diapositiva 13): "¡Misión Temporal Cumplida, Genios!" Revisar los objetivos específicos del desafío con los estudiantes, según cada nivel y reto.</td>
+                        <td style="padding: 10px; vertical-align: top;">"Hagamos un último chequeo: ¿Lograron crear cronómetros básicos que midan el tiempo con precisión utilizando los botones de sus Micro:bit? ¿Crearon cronómetros más avanzados que registren tiempos parciales o hasta cronómetros multimodo? ¡Estoy seguro de que superaron todas las expectativas! ¡Felicidades, genios del tiempo!”</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 4 -->
+        <div id="activity-4" class="activity" data-time="7">
+            <div class="banner" onclick="toggleContent('activity_4_content')">
+                <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 7 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Colaboración para mejorar proyectos con la metodología Extreme Programming (XP).
+                </div>
+            </div>
+            <div id="activity_4_content" class="content">
+                 <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar (Diapositiva 14): "¡Uniendo Mentes Temporales!" Mostrar instrucciones para formar parejas y explicar que trabajarán con la metodología Extreme Programming (XP), enfocándose en la programación en parejas.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Genios del tiempo, es hora de unir nuestras mentes y programar cronómetros en equipo! 🌟 Formen parejas y prepárense para trabajar con la metodología Extreme Programming (XP). ¡Juntos vamos a programar, revisar y potenciar nuestros cronómetros de Micro:bit!</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> Proyectar (Diapositiva 15): "¡Parejas Temporales en 30 Segundos!" Temporizador de 30 segundos para formar los equipos.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Tienen 30 segundos para unirse a su compañero de programación temporal! ⏱️ Busquen su pareja rápidamente y prepárense para una lluvia de ideas creativas. ¡Parejas listas, cronómetros listos!</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1 minuto):</strong> Proyectar (Diapositiva 16): "¡Extreme Programming Temporal en Acción!" Explicar los roles del programador y el copiloto, y cómo intercambiarán roles durante la actividad.</td>
+                         <td style="padding: 10px; vertical-align: top;">¡Programadores del tiempo, vamos a usar Extreme Programming (XP) para crear nuestros cronómetros! 💻 En cada pareja, uno será el programador y el otro el copiloto. El programador escribe el código, y el copiloto lo revisa, da ideas y busca errores. Luego, intercambiarán los roles. ¡Prepárense para programar, aprender y mejorar juntos!</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (4 minutos):</strong> Proyectar (Diapositiva 17): "¡Programando Cronómetros en Pareja - Parte 1!" Temporizador de 4 minutos para la primera fase de programación, con el recordatorio de los roles.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Manos a la obra, programadores del tiempo! ⏱️ Tienen 4 minutos para comenzar a programar sus cronómetros. El primer estudiante será el programador y el segundo el copiloto. ¡A crear magia con el tiempo y la programación!</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (4 minutos):</strong> Proyectar (Diapositiva 18): "¡Programando Cronómetros en Pareja - Parte 2!" Temporizador de 4 minutos para la segunda fase de programación, con el recordatorio del intercambio de roles.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Es momento de intercambiar roles, programadores! ⏱️ Tienen 4 minutos para continuar programando sus cronómetros. Ahora, el segundo estudiante será el programador y el primer estudiante el copiloto. ¡A seguir creando y mejorando sus cronómetros!</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 6 (1 minuto):</strong> Proyectar (Diapositiva 19): "¡Reflexiones de Programación Temporal en Pareja!" Preguntas para reflexionar sobre la experiencia de trabajar en equipo con la metodología XP.</td>
+                         <td style="padding: 10px; vertical-align: top;">¡Reflexionemos sobre esta aventura de programación temporal en pareja! 🌟 ¿Qué aprendieron trabajando con la metodología XP? ¿Cómo los ayudó el trabajo en equipo a mejorar sus cronómetros? ¿Qué consejo le darían a otros programadores que trabajan en pareja? ¡Compartan sus ideas y celebremos la programación en equipo!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+         <!-- Actividad 5 -->
+        <div id="activity-5" class="activity" data-time="4">
+            <div class="banner" onclick="toggleContent('activity_5_content')">
+                <div class="title">🏅 Actividad 5: Honor the Lab ⏰ Tiempo: 4 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Reflexión final y organización del espacio de trabajo.
+                </div>
+            </div>
+             <div id="activity_5_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Maestro</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0.5 minutos):</strong> Proyectar (Diapositiva 20): "¡Misión Temporal Cumplida, Programadores!" Mostrar los objetivos iniciales y discutir con los estudiantes si se cumplieron, enfocándose en la práctica del desarrollo de proyectos de cronómetros con Micro:bit.</td>
+                        <td style="padding: 10px; vertical-align: top;">¡Genios del tiempo, llegó el momento de celebrar nuestros increíbles cronómetros! 🌟 Revisemos juntos nuestros objetivos: ¿Practicamos cómo crear cronómetros básicos que midan el tiempo con precisión utilizando los botones de nuestros Micro:bit? ¿Creamos cronómetros más avanzados que registren tiempos parciales o hasta cronómetros multimodo que revolucionen la forma en que medimos el tiempo? ¡Estoy seguro de que cada uno hizo un trabajo brillante! ¿Cómo se sienten al respecto?</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (0.5 minutos):</strong> Felicitar a los estudiantes por su participación y esfuerzo, sin destacar a individuos, reforzando el trabajo en equipo, el aprendizaje mutuo y la creatividad en la programación de cronómetros con Micro:bit.</td>
+                        <td style="padding: 10px; vertical-align: top;">Hoy, todos fueron increíbles programadores del tiempo. Dieron vida a cronómetros fantásticos, exploraron el poder de la lógica y la programación en equipo, y se ayudaron mutuamente como verdaderos genios. ¡Estoy muy orgulloso de todos los programadores del tiempo que hay aquí! ¡Un aplauso para su creatividad, lógica, dedicación y capacidad para aprender juntos!</td>
+                    </tr>
+                     <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (3 minutos):</strong> Proyectar (Diapositiva 21): "¡Honremos Nuestro Espacio Temporal!" Dar instrucciones para recoger los materiales utilizados y organizar el espacio de trabajo.</td>
+                        <td style="padding: 10px; vertical-align: top;">Ahora, como verdaderos programadores del tiempo, debemos honrar nuestro espacio de trabajo. Recojan sus Micro:bits, tabletas y todos los materiales que usamos, y dejen el aula lista para nuevas aventuras de programación. ¡Recuerden que cuidar nuestro espacio es parte de la magia de la creación y la programación!</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+   </div> <!-- Cierre del container -->
+    <script>
+        // Aquí puedes agregar más scripts si es necesario
+    </script>
+</body>
+</html>
